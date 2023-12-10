@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InstaWeb</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+        }
+
+        nav {
+            background: linear-gradient(to right, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            color: #ffffff;
+            padding: 10px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        nav .login {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        nav .login:hover {
+            background-color: white;
+            color: #fd1d1d;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        form.foto {
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input[type="file"],
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #405de6;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #feed {
+            border: 1px solid #e1e1e1;
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .post {
+            padding: 10px;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .post img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .comments {
+            margin-top: 10px;
+        }
+
+        .comment {
+            margin-bottom: 5px;
+        }
+
+        .comment-form {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .comment-form label {
+            margin-right: 10px;
+        }
+
+        .comment-form input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 0px;
+            border-bottom: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .comment-form input[type="submit"] {
+            padding: 10px;
+            font-size: 14px;
+            background-color: #fd1d1d;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Instagram</h1>
+        <a class="login" href="instalogin.html">Login</a>
+    </nav>
+
+    <main>
+        <form class="foto" action="#" method="post" enctype="multipart/form-data">
+            <label for="file">Seleccionar foto:</label>
+            <input type="file" name="file" id="file" accept="image/*">
+
+            <label for="title">Título:</label>
+            <input type="text" name="title" id="title" placeholder="Ingrese el título">
+
+            <input type="submit" value="Subir foto">
+        </form>
+
+        <div id="feed">
+            <div class="post">
+                <img src="https://www.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg" alt="Foto 1">
+                <div class="comments">
+                    <p class="comment"><strong>Usuario1:</strong> ¡Increíble foto!</p>
+                    <p class="comment"><strong>Usuario2:</strong> Me encanta el paisaje.</p>
+                </div>
+                <form class="comment-form" action="#" method="post">
+                    <label for="comment1">Añadir comentario:</label>
+                    <input type="text" id="comment1" name="comment1">
+                    <input type="submit" value="Comentar">
+                </form>
+            </div>
+
+            <div class="post">
+                <img src="https://www.hofmann.es/blog/wp-content/uploads/2021/09/HF_3_Paisajes_WEB-23.jpg" alt="Foto 2">
+                <div class="comments">
+                    <p class="comment"><strong>Usuario3:</strong> Hermosos colores.</p>
+                </div>
+                <form class="comment-form" action="#" method="post">
+                    <label for="comment1">Añadir comentario:</label>
+                    <input type="text" id="comment1" name="comment1">
+                    <input type="submit" value="Comentar">
+                </form>
+            </div>
+
+            <div class="post">
+                <img src="https://s1.ppllstatics.com/leonoticias/www/multimedia/202107/06/media/MM-senderismo-asturias/oddle-1-ksRC--1350x900@El%20Comercio.jpg" alt="Foto 3">
+                <div class="comments">
+                    <p class="comment"><strong>Usuario4:</strong> ¿Dónde tomaste esta foto?</p>
+                    <p class="comment"><strong>TuUsuario:</strong> En la montaña, fue genial.</p>
+                </div>
+                <form class="comment-form" action="#" method="post">
+                    <label for="comment1">Añadir comentario:</label>
+                    <input type="text" id="comment1" name="comment1">
+                    <input type="submit" value="Comentar">
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
